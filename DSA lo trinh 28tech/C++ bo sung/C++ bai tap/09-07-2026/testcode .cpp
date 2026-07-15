@@ -5,29 +5,34 @@
 #include <algorithm>
 #include <math.h>
 
+
+// nhap vao mot mang, duyet toan bo mang, dua ra cap so co tong la so chan
 using namespace std; 
 
-int main()
-{
-	int a;
-	cin >> a;
-	if (a<=0)
-	{
-		cout << "INVALID";
-		return 0;
-	}
-	if (a%400==0 || (a%4==0 && a%100!=0)) 
-	{
-		cout << "YES";
-	}
-	else
-	{
-		cout << "NO";
-	}
-	
-	
-	
-	ios::sync_with_stdio(false); // 2 cau lenh tang toc do doc ghi
-	cin.tie(nullptr);
-}
+//void change (int &n)
+//{
+//	n=n+100;
+//	cout << n << " cnay la n "<< endl;
+//}
 
+using namespace std;
+
+int main(){
+    vector<int> v;
+    v.push_back(1); // {1}
+    v.push_back(2); // {1, 2}
+    v.push_back(3); // {1, 2, 3}
+    v.push_back(4); // {1, 2, 3, 4}
+    int a = v.size();
+    cout << "Kich thuoc vector : " << a << endl; // v.length()
+    cout << "Duyet vector bang chi so : \n";
+    for(int i = 0; i < v.size(); i++){
+        cout << v[i] << ' ';
+    }  
+    cout << "\nDuyet vector bang ranged-base for loop :\n";
+    for(int x : v){
+        cout << x << ' ';
+    }
+    return 0;
+}
+	
