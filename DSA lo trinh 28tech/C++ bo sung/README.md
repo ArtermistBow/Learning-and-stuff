@@ -313,7 +313,7 @@ int main(){
    cout << "Kieu du lieu cua p : " << typeid(p).name() << endl;
    cout << "Kieu du lieu cua l : " << typeid(l).name() << endl;
    return 0;
-
+}
 
 
 
@@ -331,7 +331,7 @@ int main(){
 
 
 
-## Bài 2: STL C++ (14/07/2026)
+## Bài 2.1: STL C++ (14/07/2026) Phần vecto và Iterator
 ### Vecto trong C++
 #### Khái niệm chung
 - Vecto có tính chất giống một mảng động, tự thay đổi kích thước khi xoá hay thêm phần tử trong mảng.
@@ -362,7 +362,7 @@ int main(){
 
 
 
-### Một số hàm thường dùng trong vecto
+#### Một số hàm cơ bản trong vecto
 - size(): trả về số lượng ptu 
 - push_back(): thêm ptu vào cuối vecto
 - pop_back(): xoá ptu cuối cùng trong vecto
@@ -387,8 +387,9 @@ int main(){
     }
     return 0;
 
-
-
+}
+```
+```c
 // vecto string
 using namespace std;
 
@@ -407,6 +408,33 @@ int main(){
     cout << "\nKich thuoc vector : " << v.size() << endl;
 }
 ``` 
+
+#### Một số hàm thường dùng trong vecto
+- **Cách sử dụng các hàm ở dưới: 
+- vd cho vecto tên "v" thì dùng các hàm bằng cách v."tên hàm" 
+- vd v.emplace_back(5);
+- vd2: v.pushback(4);
+
+1 Hàm truy cập phần từ 
+
+- Truy cập phần tử thông qua chỉ số: dùng "tenvecto[chỉ số]" hoặc "at(index)"
+- front(): truy cập ptu đầu tiên, back(): truy cập ptu cuối
+
+2 Hàm kích thước
+
+- size(): trả về kích thước vecto
+- empty(): vecto rỗng trả về 1, ko thì trả về 0
+- max_size(): trả về kich thước tối đa của vecto
+- resize(): đổi kích thước của vecto
+
+3 Hàm thêm,chèn,xoá
+![alt text](image-3.png)
+
+//  them chu thich của các hàm trên vào đây cho dễ hiểu nếu có time
+
+
+
+
 
 ### M1c và m2c với vecto
 #### M1c
@@ -433,7 +461,7 @@ int main(){
 
 
 #### M2c
-- Tư duy một chút thì m2c giống trục toạ độ xy. Tưởng tượng chưa có trục nào cả, tự nhiên có 1 vecto m1c tạo thành trục x, thì để tạo tiếp các giá trị của trục y thì ở mỗi ô giá trị của trục x sẽ thêm một vecto nữa, từ đó tạo ra trục y. Với tư duy đó có được cách triển khai m2c bằng vecto như sau
+- Tưởng tượng một chút thì m2c giống trục toạ độ xy. Tưởng tượng chưa có trục nào cả, tự nhiên có 1 vecto m1c tạo thành trục x, thì để tạo tiếp các giá trị của trục y thì ở mỗi ô giá trị của trục x sẽ thêm một vecto nữa, từ đó tạo ra trục y. Với tư duy đó có được cách triển khai m2c bằng vecto như sau
 
 - VD1 nhập từng dòng của m2c cnhuw 1 vecto và thêm vào vecto chính
 ``` c
@@ -488,5 +516,107 @@ int main(){
 ```
 
 ### Iterator
+#### Khái niệm (đại khái là thế)
+- Hiểu sơ sơ thì nó giống một con trỏ, trỏ tới các phần tử trong vector
+- Có 4 iterator chính trong vecto và cú pháp khai báo:
+![alt text](image-2.png)
+
+- Ví dụ
+``` c
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+    vector<int> v = {28, 100, 30, 20, 15};
+    cout << "Duyet vector bang iterator : \n";
+    for(vector<int>::iterator it = v.begin(); it != v.end(); it++){
+        cout << *it << " ";
+    }
+    cout << "\nDuyet nguoc vector bang iterator nguoc : \n";
+    for(vector<int>::reverse_iterator it = v.rbegin(); it != v.rend(); ++it){
+        cout << *it << ' ';
+    }
+	cout << endl;
+	vector<int>::iterator it3 = v.begin() +2;
+	cout << "v[2] =" << *it3 << endl;
+    return 0;
+}
 
 
+/* OUTPUT
+Duyet vector bang iterator : 
+28 100 30 20 15 
+Duyet nguoc vector bang iterator nguoc : 
+15 20 30 100 28
+v[2]=30
+ */
+``` 
+
+## Bài 2.2 STL C++ (16/07/2026) phần Set, Multiset
+### Set trong C++
+- Hiểu nôm na thì nó giống một dãy địa chỉ nhà xếp từ bé đến lớn
+	- Phần tử trong set có giá trị ko trùng nhau
+	- Các phần tử được sắp xếp theo thứ tự từ bé đến lớn
+	- Và set ko thể truy cập phần tử qua chỉ số như mảng hay vecto 
+
+#### Một số hàm cơ bản của set
+1 Hàm thao tác phần tử
+
+- size (): Trả về số lượng phần tử trong set
+- insert() thêm phần tử vào set
+- empty(): ktra xem set rỗng trả về 1, ko thì trả về 0
+- clear(): xoá all set
+
+- VD về insert và duyệt set
+
+``` c++
+#include <iostream>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
+int main(){
+    set<int> se; // {}
+    se.insert(3); // {3}
+    se.insert(1); // {1, 3}
+    se.insert(1); // {1, 3}
+    se.insert(2); // {1, 2, 3}
+    se.insert(3); // {1, 2, 3}
+    se.insert(2); // {1, 2, 3}
+    se.insert(4); // {1, 2, 3, 4}
+    
+  
+    cout << "\nDuyet set bang iterator : \n";
+    for(set<int>::iterator it = se.begin(); it != se.end(); ++it){
+        cout << *it << " ";
+    }
+    
+    cout << endl;
+    
+    cout << *se.begin() << endl; // dua ra phan tu dau tien cua set
+    cout << *se.rbegin() << endl; // dua ra phan tu cuoi cung cua set
+}
+
+
+
+/* OUTPUT
+Duyet set bang iterator
+1 2 3 4
+1
+4
+*/
+
+
+```
+
+
+2 Hàm tìm kiếm, xoá và duyệt
+- Hàm find(): Dùng để tìm kiếm một phần tử trong set,  trả về iterator tới phần tử nếu tìm thấy, nếu k tìm dc trả về iterator end() của set
+- Hàm count() trả về số lần xuất hiện của ptu trong set (mà vì ptu trong set ko trùng nhau nên có thể dùng thay cho find()) hàm này trả về 0 hoặc 1
+- Hàm erase: Xoá giá trị ra khỏi set, có thể xoá thông qua iterator
+- lower_bound, upper_bound,.., // cái này bổ sung sau
+
+### Multiset trong C++
