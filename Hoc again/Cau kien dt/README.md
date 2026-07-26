@@ -47,7 +47,18 @@
 
 ### Chương 3: các linh kiện cơ bản
 #### Trở
+Tác dụng
 - Ngăn cản dòng trong mạch
+- Dòng điện có xu hướng ưu tiên hướng nào có điện trở nhỏ nhất, khi dòng điện bị rẽ vd 2 nhánh, nó sẽ ưu tiên 99% điện áp vào nhánh có trở kháng nhỏ nhất 
+
+Bonus: Từ đó đưa ra giải thích về nguyên lý trở pull-up pull down như sau
+![alt text](image-5.png)
+- Nguyên lý pull-down:
+    - Khi cấu hình chân mcu thành input, nó đóng vai trò là 1 vôn kế cực nhạy
+    - Khi nút dc bấm, dòng điện đi qua, điện áp đo được ở mức 5v ghi nhận tín hiệu cao, lúc này có dòng điện đi qua xuống gnd và điện trở đóng vai trò hạn dòng tránh dòng điện thẳng xuống gnd gây cháy
+    - Khi nút ko dc bấm, vì điện áp của chân input của MCU luôn ko xác định CHỨ KHÔNG PHẢI BẰNG 0 (ở môi trg điện áp nhảy do nhiễu môi trg, từ trg các thứ) (ở môi trg giả lập thì do khi chân input ko nối với gì thì R= vô cực, không thể tính ra giá trị điện áp theo công thức V=I*R) khi đó điện trở giúp kéo và giữ điện áp chân input của mcu xuống 0 và giữ yên để chân input ghi nhận tín hiệu LOW
+
+
 - Công thức liên quan
     - ĐL ohm: $U=I.R$
     - Công suất tiêu tán $$P=U\cdot I = I^2\cdot R =  \frac{U^2}{R} $$
@@ -85,7 +96,8 @@
 
 
 
-#### Phân loại và Ứng dụng phổ biến
+Phân loại và Ứng dụng phổ biến
+
 - Tụ giấy, Tụ gốm (Ceramic): Rẻ, kích thước nhỏ, dùng để lọc nhiễu cao tần
 - Tụ Mica: Độ ổn định cao, chịu nhiệt tốt, dùng trong mạch chính xác
 - Tụ hóa (Aluminum/Tantalum): Điện dung rất lớn, dùng để lọc nguồn hoặc lưu trữ năng lượng
@@ -103,7 +115,13 @@
 - Sinh ra ht tự cảm khi có dòng điện chạy qua 
 - Note: Một chút giải thích về tác động của nó lên mạch
     ![alt text](image-4.png)
-    - Có thể thấy cuộn cảm thay vì để tín hiệu lên đột ngột thì sẽ cho tín hiệu lên 5v và xuống 0v từ từ 
+    - Có thể thấy cuộn cảm thay vì để tín hiệu lên đột ngột (đg màu vàng) thì sẽ cho tín hiệu lên 5v và xuống 0v một cách từ từ (đg màu xanh)
+
+- Cách đọc giá trị
+    - Đọc giống trở theo mã màu:
+    - Vòng 1+2 trị số chính
+    - V3: hệ số nhân ($10^n$)
+    - V4: Dung sai 
 
 
 
