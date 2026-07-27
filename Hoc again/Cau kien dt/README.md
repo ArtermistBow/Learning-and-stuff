@@ -112,7 +112,7 @@ Phân loại và Ứng dụng phổ biến
 
     
 #### Cuộn cảm: 
-- Sinh ra ht tự cảm khi có dòng điện chạy qua 
+- Sinh ra hiện tượng tự cảm khi có dòng điện chạy qua 
 - Note: Một chút giải thích về tác động của nó lên mạch
     ![alt text](image-4.png)
     - Có thể thấy cuộn cảm thay vì để tín hiệu lên đột ngột (đg màu vàng) thì sẽ cho tín hiệu lên 5v và xuống 0v một cách từ từ (đg màu xanh)
@@ -130,7 +130,7 @@ Phân loại và Ứng dụng phổ biến
 
 ### Chương 4: Diot
 
-- Phương trình shockley: $ I=I_s\cdot(e^\frac{V}{n\cdot V_t}-1)  $
+- Phương trình shockley (mối quan hệ giữa I và V): $ I=I_s\cdot(e^\frac{V}{n\cdot V_t}-1)  $
     - I: dòng qua diot
     - $I_s$ dòng điện bão hoá ngược
     - V: điện áp rơi trên diot, ở trg hợp này tg đương điện áp ngưỡng
@@ -141,7 +141,26 @@ Phân loại và Ứng dụng phổ biến
 
 
 - Một số ứng dụng của Diot
-    - Diot chỉnh lưu: Biến đổi AC thành DC qua các mạch 
+    - Diot chỉnh lưu: Biến đổi AC thành DC qua các mạch nửa/cả chu kì
+    - Diot zener hoạt động ở vùng đánh thủng ngược để giữ điện áp cố định
+    - Diot có thể làm mạch như nhân đôi điện áp, mạch ghim, cắt đỉnh sóng
 
+### Chương 5: Transistor
+#### Khái niệm 
+![alt text](image-6.png)
+- 
+- Sử dụng như một thiết bị khuếch đại hoặc khoá điện tử 
 
+- Cấu tạo: e miền Emitter (E), Base (B), Collector (C)
+
+- Phân loại
+    - NPN: dòng điện vào B và C, ra E
+    - PNP: dòng điện vào E, ra B và C
+
+- Tiếp giáp: transistor hoạt động như 2 diot đấu lưng lại với nhau (giống diot chứ k phải có 1 con diot thật trong đấy) và dùng chung một cái ống ở giữa là chân B
+    - Tiếp giáp BE hoạt động giống diot giữa chân B và E
+    - Tiếp giáp BC hoạt động giống diot giữa chân B và C
+
+    - Trạng thái tiếp giáp
+        - Phân cực thuận: điện áp đúng chiều, diot cho điện đi qua
 
