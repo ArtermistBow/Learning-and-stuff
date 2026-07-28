@@ -163,4 +163,26 @@ Phân loại và Ứng dụng phổ biến
 
     - Trạng thái tiếp giáp
         - Phân cực thuận: điện áp đúng chiều, diot cho điện đi qua
+        - Phân cực nghịch: điện áp ngược chiều, diot đóng chặn dòng điện 
+
+- Chế độ làm việc
+![alt text](image-7.png)
+
+- Điểm làm việc tĩnh Q
+    - Khái niệm
+        - Là trạng thái idle của Transistor, là mức điện áp có sẵn trong mạch chỉ cần câos nguồn DC mà chưa có tín hiệu vào nào 
+    - Tại sao cần có điểm Q
+        - trans không thể làm việc với điện áp dưới 0V, trong khi sóng AC lại có lúc dương lúc âm
+        - Từ đó Q đóng vai trò giống bệ đỡ nâng tím hiệu luôn cao hơn 0V (vd tín hiệu ac giao động mức -1v -> 1v thì khi có đ' làm việc Q với 5V DC thì tín hiệu giao động ở 4v->6v)
+        - Điểm Q lý tưởng nằm chính giữa tín hiệu ac nhằm thu được toàn bộ tín hiệu
+
+    - Góc nhìn 2d
+    ![alt text](image-8.png)
+    ![alt text](image-9.png)
+
+    - Góc nhìn dưới dạng 3d
+    ![alt text](image-10.png)
+
+    Link hình trực quan : https://colab.research.google.com/drive/1nnTwo_fBb4aHSHlUp05pdsGY5KkrmRhB?usp=sharing
+
 
