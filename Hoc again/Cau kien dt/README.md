@@ -124,7 +124,13 @@ Phân loại và Ứng dụng phổ biến
     - V4: Dung sai 
 
 
+#### Tính liên hệ về đồ thị tín hiệu của cuộn cảm và tụ điện
+// phan nay nhin 2 anh, qsat htg r ghi them sau
+- Tính 
+![alt text](image-11.png)
+    - Có thể thấy khi mắc cảm trc tr
 
+    ![alt text](image-12.png)
 #### Biến áp
 
 
@@ -138,12 +144,25 @@ Phân loại và Ứng dụng phổ biến
         - diot Ge: 0,2V : 0,4V
     - n: hệ số phát xạ (=1 với Ge, =2 với Si)
     - $V_t$: điện áp nhiệt ($V_t=\frac{kT}{q}$)
+- Các mô hình tương đương
+     ![alt text](image-13.png)
+    - VD: ở mạch điện trên, diot đóng vai trò như nguồn áp 
 
+    ![alt text](image-14.png)
+    VD: diot chuyển đổi thành trở và tụ mắc song song khi chuyển thành mô hình tín hiệu nhỏ với
+        - $r_d=\frac{V_t}{Idc}$ ~ $\frac{26mV}{Idc}$
+        với Idc là dòng 1 chiều qua diot
 
+        - C kí sinh = tra datasheet
 - Một số ứng dụng của Diot
     - Diot chỉnh lưu: Biến đổi AC thành DC qua các mạch nửa/cả chu kì
+
+        ![alt text](image-15.png)
+        - Có thể thấy Mạch biến đổi điện AC thành điện DC nhấp nháy
     - Diot zener hoạt động ở vùng đánh thủng ngược để giữ điện áp cố định
     - Diot có thể làm mạch như nhân đôi điện áp, mạch ghim, cắt đỉnh sóng
+        ![alt text](image-16.png)
+        - Mạch này là mạch xén ở chu kì dương, ở chu kì âm diot phân cực nghịch, không dẫn, ở chu kì dương, diot thuận, điện áp bị gọt ở ngưỡng làm việc của diot là 0,7V 
 
 ### Chương 5: Transistor
 #### Khái niệm 
