@@ -163,6 +163,10 @@ Phân loại và Ứng dụng phổ biến
     - Diot có thể làm mạch như nhân đôi điện áp, mạch ghim, cắt đỉnh sóng
         ![alt text](image-16.png)
         - Mạch này là mạch xén ở chu kì dương, ở chu kì âm diot phân cực nghịch, không dẫn, ở chu kì dương, diot thuận, điện áp bị gọt ở ngưỡng làm việc của diot là 0,7V 
+    - Điểm khác nhau giữa mạch chỉnh lưu và mạch xén (ứng dụng diot 1 và 3)
+    ![alt text](image-17.png)
+        - Ở mạch chỉnh lưu diot mắc nối tiếp với R_tải (R_tải có vai trò thay thế thiết bị khi sử dụng thực tế)
+        - Ở mạch xén diot mắc song song R_tải nối xuống mass 
 
 ### Chương 5: Transistor
 #### Khái niệm 
