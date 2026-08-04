@@ -38,7 +38,17 @@ Link mô phỏng: https://colab.research.google.com/drive/1Dpss1CEsxGLYlAz2xscLP
     - Có thể dùng trao đổi dữ liệu với các thiết bị vào ra
 - Kích thước = độ dài từ xử lý của CPU
 
-#### Bộ đếm chương trình
+#### Bộ đếm chương trình (pc counter)
+- Tác dụng: lưu địa chỉ của lệnh tiếp theo sẽ được thực iện
+- CPU chạy xong 1 lệnh thì lệnh tiếp theo được tải vào PC
+
+- vd thuc hien trinh tu lenh a b c d
+    - ban dau cpu ko thuc thi lenh, pc nap dia chi a
+    - khi cpu nạp lệnh tại địa chỉ a, pc nạp địa chỉ b, cpu thực thi lệnh a
+    - cứ v cho đến end
+
+#### Thanh ghi Trạng thái 
+
 
 
 
