@@ -209,3 +209,10 @@ Phân loại và Ứng dụng phổ biến
     Link hình trực quan : https://colab.research.google.com/drive/1nnTwo_fBb4aHSHlUp05pdsGY5KkrmRhB?usp=sharing
 
 
+    // co the bo sung kien thuc them vao day 
+
+
+#### Cách mắc transistor cơ bản
+
+
+- Cách mắc CE khuếch đại điện áp và dòng điện
