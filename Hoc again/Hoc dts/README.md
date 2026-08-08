@@ -60,16 +60,47 @@
     - số bit của từ mã khi đã có bit parity là n=m+r (m là số bit thông tin khi chưa có bit parity) với
     điều kiện $2^r >= m+r+1$
     - Mẹo nhớ bit parity (bit P) nào đang kiểm tra ở vị trí nào thì tuân theo nguyên tắc "nhặt n bỏ n".
-    VD mã hamming là 1 hàng 7 bit đánh số  (1 2 3 4 5 6 7
+    VD mã hamming là 1 hàng 7 bit đánh số  (1 2 3 4 5 6 7)
         - VD bit P1 (nhặt 1 bỏ 1)
             - Lấy 1 bit số 1
             - Bỏ 1  bit số 2
             - Lấy 1 bit số 3
             - Bỏ 1 bit số 4
             tương tự bỏ 2 lấy 2, bỏ 4 lấy 4, vv
+    - Trong mã hamming, nếu là mã hamming lẻ thì tổng số bit 1 bao gồm cả bit P phải là lẻ ; nếu là hamming chẵn thì tổng số các bit 1 phải là chẵn bao gồm cả bit P 
+
+    - Khi kiểm tra lại bit lỗi bằng từ mã hamming, vị trí bit lỗi sẽ được kí kiệu là 
+    Sn...S1 vd S4S3S2S1
+        - Nếu tình tổng ra đúng số bit (đúng chẵn bit 1 hay đúng lẻ bit 1) thì Si=1, không thì Si=0 (khó hiểu quá xem vd)
 
 
+## Chương 3: Mạch logic tuần tự 
+### Khái niệm
+- Là mạch có phần từ nhớ
+- Có thời gian
 
+### Trigger
+
+
+// skip rs hoac bo sung sau neu can
+
+#### Trigger JK
+
+![alt text](image.png)
+
+- Phương trình đặc trưng $Q(n+1) = J.Q'_n+K'.Q_n$
+
+
+#### Trigger D
+
+![alt text](image-1.png)
+
+- Phương trình đặc trưng $Q(n+1) = D $
+
+- trigger T
+
+
+// bộ đếm mod, fsm và các vd tôi ghi ra vở vì vẽ bảng, mai tôi ms tóm tắt cách làm vào đc
 
 
 
