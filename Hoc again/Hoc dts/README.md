@@ -91,16 +91,63 @@
 - Phương trình đặc trưng $Q(n+1) = J.Q'_n+K'.Q_n$
 
 
-#### Trigger D
+#### Trigger D (trễ)
 
 ![alt text](image-1.png)
 
 - Phương trình đặc trưng $Q(n+1) = D $
 
-- trigger T
+#### trigger T (lật)
+
+![alt text](image-2.png)
+
+- Phương trình đặc trưng $Q(n+1) = T ⊕ Q_n $
 
 
-// bộ đếm mod, fsm và các vd tôi ghi ra vở vì vẽ bảng, mai tôi ms tóm tắt cách làm vào đc
+### Phương pháp phân tích mạch
+
+#### Quy trình phân tích mạch
+
+- B1: Xác định phương trình hàm kích cho các trigger
+- B2: Thế phương trình đặc trưng của trigger tương ứng để tìm phương trình chuyển đổi trạng thái
+- B3: Lập bảng chuyển đổi trạng thái và đồ hình trạng thái
+
+#### Quy trình thiết kế mạch tuần tự đồng bộ
+
+- B1: Xây dựng đồ hình trạng thái ban đầu
+- B2: Rút gọn trạng thái để giảm số lượng trigger
+- B3: Mã hoá trạng thái bằng mã nhị phân
+- B4: Lập bảng hàm kích sử dụng bảng karnaugh cho từng trigger
+- B5: vẽ sơ đồ
+
+
+#### Quy trình thiết kế bộ đếm ko đồng bộ 
+
+// Phần  này xem xét bổ sung sau nếu cần
+
+
+### Fine state machine
+- Có 2 kiểu mealy và moore
+- Mealy: Hàm đầu ra phụ thuộc vào trạng thái hiện tại và input hiện tại
+    - Thường có số trạng thái trong ít hơn Moore nhưng mạch ngõ ra phức tạp hơn
+
+- Moore : output chỉ phụ thuộc duy nhất vào trạng thái hiện tại, không phụ thuộc trực tiếp đầu vào
+    - Trạng thái nhiều hơn moore nhưng hàm ra đơn giản hơn
+
+#### Quy trình thiết kế state machine tổng quát 
+- b1: Gán hàm và biến
+- b2: xây dựng đồ hình trạng thái và bảng chuyển đổi trạng thái
+- b3: Tối thiểu hoá trạng thái
+- b4: Gán các mã nhị phân cho từng trạng thái sau khi tối ưu
+- b5 Tìm phương trình hàm kích và phương trình ngõ ra 
+
+
+### Một số vd của chương 3
+
+
+
+
+
 
 
 
