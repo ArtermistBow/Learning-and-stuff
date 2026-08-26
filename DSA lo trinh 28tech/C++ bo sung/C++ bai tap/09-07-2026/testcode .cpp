@@ -45,10 +45,19 @@
 using namespace std;
 
 int main(){
-   vector<int> v(3, 100); // 100 100 100
-   v.push_back(3);
-   v.push_back(2);
-   vector<int>::iterator it = v.begin()+3;
-   cout << *it << endl;
+   cout << "Hello PTIT.";
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
