@@ -50,6 +50,20 @@ GPIO_Init(GPIOA, &ChanGpioA);
     - **Nhóm alternate**
     // tạm thời chưa dùng đến món này nên sẽ bổ sung sau
 
+
+#### 1.4 Setbit, đọc giá trị input
+
+- trong esp32 để cho 1 chân có thể đưa ra 3v3 hay 0v thì dùng digitalWrite. Trong stm32, lấy cụ thể trong thư viện SPL với stm32f103, sẽ sử dụng 2 hàm sau 
+```c
+    // cú pháp GPIO_SetBits(<tên port, pin số mấy>) để lật lên bit 1 vd
+    	GPIO_SetBits(GPIOA, GPIO_Pin_5);
+    // cú pháp GPIO_ResetBits(<tên port, pin số mấy>) để lật bit từ 1 xuống 0 vd
+        GPIO_ResetBits(GPIOA, GPIO_Pin_5);
+
+```
+
+- Ngoài ra để đọc giá trị từ chân input ta dùng hàm 
+
 ### 2. Tạo hàm delay
 
 - Trong f103 có 1 bộ đếm tick riêng, tránh ảnh hưởng tới cpu, gọi là Systick
@@ -59,6 +73,36 @@ GPIO_Init(GPIOA, &ChanGpioA);
 
 - code delay
 ``` volatile unsigned int count;
+void startSystick(void) 
+{
+   SysTick_Config(SystemCoreClock / 1000); // 72Mhz / 1000 de dem du tung do tick, tao thanh 1ms
+}
+
+void SysTick_Handler(void) // ten ham nay phai ghi y het khong dc sua ten vi nhot tu trong file startup ra :v
+{
+	if (count !=0) 
+	{
+		count--;
+	}
+}
+
+void delay(unsigned int time)
+{
+	count = time;
+	while( count != 0)
+	{
+		// trong nay ko lam gi vi khi delay chuong trinh k thuc hien // thu bo doan while nay di sau de xem co giong timer chay // ko
+	}
+}
+```
+### 3. Bài tập 
+- Code Bài 2 dùng button nháy lend 
+``` c
+#include "stm32f10x.h"
+
+// H�m delay don gi?n d�ng v�ng l?p
+
+volatile unsigned int count;
 void startSystick(void) 
 {
    SysTick_Config(SystemCoreClock / 1000);
@@ -77,7 +121,44 @@ void delay(unsigned int time)
 	count = time;
 	while( count != 0)
 	{
-		// trong nay ko lam gi vi khi delay chuong trinh k thuc hien // thu bo doan while nay di sau de xem co giong timer chay // ko
+		// trong nay ko lam gi vi khi delay chuong trinh k thuc hien // thu bo doan while nay di sau de xem co giong timer chay song song ko
 	}
 }
+
+int main(void)
+{
+	
+	startSystick();
+	
+	GPIO_InitTypeDef ChanGpioA;
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, 1);
+	ChanGpioA.GPIO_Pin = GPIO_Pin_5;
+	ChanGpioA.GPIO_Mode = GPIO_Mode_Out_PP;
+	ChanGpioA.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &ChanGpioA);
+
+	ChanGpioA.GPIO_Pin = GPIO_Pin_3;
+  ChanGpioA.GPIO_Mode = GPIO_Mode_IPD;
+	GPIO_Init(GPIOA, &ChanGpioA);
+	
+	
+	while (1)
+	{
+		int stat = GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_3);
+		if (stat==1)
+		{
+			GPIO_SetBits(GPIOA, GPIO_Pin_5);
+		}
+		else
+		{
+			GPIO_ResetBits(GPIOA, GPIO_Pin_5);
+		}
+		
+	}
+	
+	
+	
+}
 ```
+
+

@@ -37,21 +37,42 @@
 //}
 //	
 
-#include <iostream>
-#include <algorithm>
-#include <set>
-#include <vector>
+//#include <iostream>
+//#include <algorithm>
+//#include <set>
+//#include <vector>
+//
+//using namespace std;
+//
+//int main(){
+//   cout << "Hello PTIT.";
+//   
+//}
+//
 
-using namespace std;
 
-int main(){
-   cout << "Hello PTIT.";
-   
+#include "stdio.h"
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	if (n==2)
+	{
+		printf("%d la so nguyen to",n);
+		return 0;
+	}
+	else 
+	{
+			int check=0;
+		for (int i=2; i<n; i++)
+		{
+			if (n%i==0) check=1;
+		}
+		if (check==1) printf("so %d la hop so",n);
+		else printf("so %d la so nguyen to",n);
+	}
+
 }
-
-
-
-
 
 
 
